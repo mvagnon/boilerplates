@@ -45,9 +45,6 @@ jobs:
       - name: Build
         run: bun run --if-present build
 
-      - name: Build Storybook
-        run: bun run build-storybook
-
   security:
     name: Dependency security
     runs-on: ubuntu-latest

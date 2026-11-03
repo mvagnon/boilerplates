@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "api:sync": "orval",
-    "api:sync:override": "orval --config ./orval.config.override.ts",
     "dev": "react-router dev",
     "dev:mock": "VITE_API_MOCKING=true bun run dev",
     "start": "react-router-serve ./build/server/index.js",

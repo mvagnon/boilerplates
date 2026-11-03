@@ -1,7 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "tags": ["-lintignore"],
-  "entry": ["orval.config.override.example.ts"],
+  "entry": ["app/mocks.local.example.ts"],
   "ignoreIssues": {
     "app/api/generated/**": ["files", "exports", "types"]
   },

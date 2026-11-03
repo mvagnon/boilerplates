@@ -3,7 +3,7 @@ import type { ConfigExternal } from "orval";
 export default {
   api: {
     input: {
-      target: process.env.OPENAPI_URL ?? "http://localhost:3000/openapi.json",
+      target: process.env.OPENAPI_URL!,
     },
     output: {
       target: "./app/api/generated/client.ts",

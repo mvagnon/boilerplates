@@ -1,7 +1,7 @@
 .DS_Store
 .env
 /node_modules/
-/app/mocks.local.ts
+/app/api/mocks.local.ts
 
 # React Router
 /.react-router/

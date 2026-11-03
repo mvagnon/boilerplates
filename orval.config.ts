@@ -13,6 +13,10 @@ export default {
       httpClient: "fetch",
       urlEncodeParameters: true,
       override: {
+        // mutator: {
+        //   path: "./app/api/http.ts",
+        //   name: "customFetch",
+        // },
         requestOptions: { credentials: "include" },
         fetch: {
           includeHttpResponseReturnType: false,

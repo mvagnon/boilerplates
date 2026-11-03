@@ -3,7 +3,7 @@ import type { HttpHandler } from "msw";
 // import { delay } from "msw/utils/delay";
 
 /**
- * Copy this file to mocks.local.ts.
+ * Copy this file to app/api/mocks.local.ts.
  * Add handlers to the exported array; local responses override generated ones.
  * Replace the example URL and payloads with your API contract, reusing generated types and factories.
  * Choose one handler per route below: the first handler returning a response wins.

@@ -5,7 +5,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import "./app.css";
 
 if (import.meta.env.DEV && import.meta.env.VITE_API_MOCKING === "true") {
-  await import("./mocks");
+  await import("./api/mocks");
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

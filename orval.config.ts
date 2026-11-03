@@ -11,7 +11,7 @@ export default {
       mode: "tags-split",
       client: "react-query",
       httpClient: "fetch",
-      mock: { generators: [{ type: "msw" }] },
+      mock: { indexMockFiles: true, generators: [{ type: "msw" }] },
       formatter: "prettier",
     },
   },

@@ -5,6 +5,7 @@
   "scripts": {
     "api:sync": "orval",
     "dev": "react-router dev",
+    "dev:mock": "VITE_API_MOCKING=true bun run dev",
     "start": "react-router-serve ./build/server/index.js",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix --max-warnings 0",

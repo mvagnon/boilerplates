@@ -17,6 +17,7 @@ app/                         # Application shell, providers, routing and global 
 │   ├── http.ts              # Optional custom HTTP transport, only for behavior the generated client cannot provide
 │   └── mocks*.ts            # Development mock setup, local overrides and example
 ├── assets/                  # Shared assets imported by application code
+├── constants/               # Shared theme tokens and application constants
 ├── contexts/                # Optional cross-feature contexts and their providers
 ├── lib/                     # Optional cross-feature utilities/integrations; no feature logic or code with a more specific owner
 ├── ui/                      # Shared presentational UI; types/props in component files, no types/ directory
@@ -24,6 +25,7 @@ app/                         # Application shell, providers, routing and global 
 └── features/
     └── <feature>/
         ├── components/      # Feature components; types/props in component files, no types/ directory
+        ├── contexts/        # Feature-owned contexts and their providers, when needed
         ├── hooks/           # Feature state/orchestration; compose generated hooks only to add behavior
         ├── schemas/         # Local extensions of generated Zod schemas, when needed; export inferred types alongside schemas
         ├── utils/           # Pure calculations and transformations, when needed

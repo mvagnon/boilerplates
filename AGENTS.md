@@ -25,4 +25,5 @@ public/                      # Static assets
 
 ## Orval
 
-Generates API functions, query hooks and types in `app/api/` from the backend's OpenAPI endpoint. Set `OPENAPI_URL` and run `bun run api:sync` to sync client with OpenAPI specs when needed; reuse the generated client and never edit it manually.
+Generates API functions, query hooks and types in `app/api/` from the backend's OpenAPI endpoint. Set `OPENAPI_URL` and run `bun run api:sync` to sync client with OpenAPI specs when needed; reuse the generated client.
+Do not edit generated files by default; manual edits require explicit user approval.

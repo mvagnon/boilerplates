@@ -9,18 +9,18 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 
 ## Commands
 
-| Command                | Purpose                                |
-| ---------------------- | -------------------------------------- |
-| `bun install`          | Install dependencies                   |
-| `bun run api:sync`     | Regenerate the client from the backend |
-| `bun run dev`          | Start the development server           |
-| `bun run start`        | Serve the production build             |
-| `bun run lint`         | Check lint rules; warnings fail        |
-| `bun run lint:fix`     | Apply automatic lint fixes             |
-| `bun run typecheck`    | Check TypeScript types                 |
-| `bun run knip`         | Find unused code and dependencies      |
-| `bun run staticchecks` | Run lint, typecheck and Knip           |
-| `bun run build`        | Build for production                   |
+| Command                | Purpose                                 |
+| ---------------------- | --------------------------------------- |
+| `bun install`          | Install dependencies                    |
+| `bun run api:sync`     | Regenerate the API client and MSW mocks |
+| `bun run dev`          | Start the development server            |
+| `bun run start`        | Serve the production build              |
+| `bun run lint`         | Check lint rules; warnings fail         |
+| `bun run lint:fix`     | Apply automatic lint fixes              |
+| `bun run typecheck`    | Check TypeScript types                  |
+| `bun run knip`         | Find unused code and dependencies       |
+| `bun run staticchecks` | Run lint, typecheck and Knip            |
+| `bun run build`        | Build for production                    |
 
 ## Env variables
 
@@ -28,7 +28,7 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 | ------------- | ---------------------------------- | ------------------------------------ |
 | `OPENAPI_URL` | Backend OpenAPI URL for `api:sync` | `http://localhost:3000/openapi.json` |
 
-`api:sync` requires backend access. Never edit generated files; run `staticchecks` after syncing.
+`api:sync` requires backend access and generates MSW handlers with Faker response data alongside the client; it does not start request interception. Do not edit generated files by default; manual edits require explicit user approval. Run `staticchecks` after syncing.
 
 ## Setup for an existing project
 

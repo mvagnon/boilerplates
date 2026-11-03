@@ -11,6 +11,14 @@ export default {
       mode: "tags-split",
       client: "react-query",
       httpClient: "fetch",
+      urlEncodeParameters: true,
+      override: {
+        requestOptions: { credentials: "include" },
+        fetch: {
+          includeHttpResponseReturnType: false,
+          forceSuccessResponse: true,
+        },
+      },
       mock: { indexMockFiles: true, generators: [{ type: "msw" }] },
       formatter: "prettier",
     },

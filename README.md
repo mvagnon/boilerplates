@@ -19,8 +19,7 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 | `bun run lint:fix`     | Apply automatic lint fixes             |
 | `bun run typecheck`    | Check TypeScript types                 |
 | `bun run knip`         | Find unused code and dependencies      |
-| `bun run test`         | Run Vitest tests in `tests/`           |
-| `bun run staticchecks` | Run lint, typecheck, Knip and tests    |
+| `bun run staticchecks` | Run lint, typecheck and Knip           |
 | `bun run build`        | Build for production                   |
 
 ## Env variables
@@ -52,7 +51,7 @@ Agent instructions:
 | Architecture         | Project structure and coding guidelines                             |
 | Dependencies & stack | React, React Router, TypeScript, Vite, Tailwind CSS, TanStack Query |
 | CI/CD                | GitHub Actions workflows                                            |
-| Code quality & tests | ESLint, Prettier, Knip, Vitest, quality scripts                     |
+| Code quality         | ESLint, Prettier, Knip, quality scripts                             |
 | `git` hooks          | Pre-commit formatting                                               |
 | API generation       | Orval client, hooks and types                                       |
 | Docker               | Production image and build context                                  |

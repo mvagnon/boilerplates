@@ -21,7 +21,6 @@ app/                         # Application shell, providers, routing and global 
         ├── adapters/        # API adapters and DTO-to-domain mapping
         └── ui/              # Feature presentation and orchestration
 public/                      # Static assets
-tests/                       # Node-based Vitest unit and focused integration tests
 ```
 
 ## Orval

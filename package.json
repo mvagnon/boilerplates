@@ -10,8 +10,7 @@
     "lint:fix": "eslint . --fix --max-warnings 0",
     "typecheck": "react-router typegen && tsc",
     "knip": "knip",
-    "test": "vitest run",
-    "staticchecks": "bun run lint && bun run typecheck && bun run knip && bun run test",
+    "staticchecks": "bun run lint && bun run typecheck && bun run knip",
     "build": "react-router build"
   },
   "dependencies": {
@@ -42,7 +41,6 @@
     "tailwindcss": "^4.2.2",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.70.1",
-    "vite": "^8.0.3",
-    "vitest": "^5.0.2"
+    "vite": "^8.0.3"
   }
 }

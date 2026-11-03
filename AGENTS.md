@@ -38,10 +38,15 @@ public/                      # Static assets
 - Define component prop types in the same file as the component, not in separate type files.
 - Keep other local types next to their usage; do not introduce a `types/` directory by default.
 
-## Orval
+## API generation and mocks
 
-Generates API functions, query hooks, types and Zod schemas in `app/api/generated/` from the backend's OpenAPI endpoint. Set `OPENAPI_URL` and run `bun run api:sync` to sync client with OpenAPI specs when needed; reuse the generated client.
-Do not edit generated files by default; manual edits require explicit user approval.
+- Generate clients, hooks, types, Zod schemas and mocks from `OPENAPI_URL` into `app/api/generated/`; never hand-edit generated files.
+- Keep permanent overrides in `orval.config.ts` using documented Orval extension points; normal mocks are stateless UI previews with fixed authenticated/onboarded users when needed.
+- Custom handlers and stateful simulations are forbidden in the normal configuration and permanent mock modules.
+- For an explicitly requested temporary flow only, create `orval.config.override.ts` from `orval.config.override.example.ts` if absent, extend the base config and isolate case-specific handlers/simulations there using documented Orval extension points.
+- The local override is Git-ignored and opt-in through `api:sync:override`; normal `api:sync` must never load it.
+- Before publication, regenerate with `api:sync` and review generated diffs; never commit local overrides or temporary generated behavior.
+- Mocks do not prove API correctness; use the existing API for real workflow verification when authorized.
 
 ## Validation
 

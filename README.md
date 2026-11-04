@@ -30,19 +30,7 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 | `OPENAPI_URL`      | OpenAPI URL or file path for `api:sync`                    | Unless `app/api/openapi.override.json` exists | None     |
 | `VITE_API_MOCKING` | Enable development request interception; set by `dev:mock` | No                                            | Disabled |
 
-## Setup
-
-### Frontend mocks skill
-
-Install the [frontend-mocks skill](https://github.com/mvagnon/skills/tree/main/frontend-mocks) in the project using [skills.sh](https://skills.sh):
-
-```bash
-bunx skills add mvagnon/skills --skill frontend-mocks
-```
-
-Use the skill to generate mocks in `src/api/mocks.local/`, then run `bun run dev:mock`.
-
-### Setup for an existing project
+## Setup for an existing project
 
 Ask your agent:
 

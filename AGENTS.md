@@ -17,7 +17,9 @@ app/                                  # Shell, providers, routing and global sty
 ├── api/
 │   ├── generated/                    # Orval clients, hooks, types and schemas; reuse directly
 │   ├── http.ts                       # Optional shared transport beyond generated behavior
-│   └── openapi.override.json         # Optional versioned full contract; before OPENAPI_URL
+│   ├── openapi.override.json         # Optional versioned full contract; before OPENAPI_URL
+│   ├── mocks.ts                      # Development-only MSW setup
+│   └── mocks.local/                  # Targeted local MSW handlers; Git-ignored
 ├── assets/                           # Shared imported assets
 ├── constants/                        # Shared theme and app constants
 ├── lib/                              # Cross-feature utilities; no more specific owner
@@ -43,4 +45,5 @@ Use generated query keys for cache invalidation and generated query options for 
 
 For frontend-only, frontend-first work or when backend/API changes are out of scope or unavailable:
 
-- Contract changes: version a complete backend OpenAPI copy as `app/api/openapi.override.json`, edit it and run `api:sync`; keep imports in `generated/`, never hand-edit its code or replace its types/hooks.
+1. Version a complete backend OpenAPI copy as `app/api/openapi.override.json`, adapt the contract, then run `api:sync`.
+2. Add only the missing API behavior or specific scenarios needed for testing in the Git-ignored `app/api/mocks.local/index.ts`, default-exporting an array with `satisfies HttpHandler[]`.

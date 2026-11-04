@@ -1,7 +1,7 @@
 .DS_Store
 .env
 /node_modules/
-/app/api/mocks.local.ts
+/app/api/handlers.override.ts
 
 # React Router
 /.react-router/

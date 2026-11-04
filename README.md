@@ -25,10 +25,10 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 
 ## Env variables
 
-| Variable           | Purpose                                                    | Required            | Default  |
-| ------------------ | ---------------------------------------------------------- | ------------------- | -------- |
-| `OPENAPI_URL`      | Backend OpenAPI URL for `api:sync`                         | Yes, for `api:sync` | None     |
-| `VITE_API_MOCKING` | Enable development request interception; set by `dev:mock` | No                  | Disabled |
+| Variable           | Purpose                                                    | Required                                      | Default  |
+| ------------------ | ---------------------------------------------------------- | --------------------------------------------- | -------- |
+| `OPENAPI_URL`      | OpenAPI URL or file path for `api:sync`                    | Unless `app/api/openapi.override.json` exists | None     |
+| `VITE_API_MOCKING` | Enable development request interception; set by `dev:mock` | No                                            | Disabled |
 
 ## Setup for an existing project
 

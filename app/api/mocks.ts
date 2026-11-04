@@ -6,14 +6,17 @@ const modules = import.meta.glob<Record<string, () => HttpHandler[]>>(
   { eager: true },
 );
 
-const localModules = import.meta.glob<HttpHandler[]>("./mocks.local.ts", {
-  eager: true,
-  import: "default",
-});
+const overrideModules = import.meta.glob<HttpHandler[]>(
+  "./handlers.override.ts",
+  {
+    eager: true,
+    import: "default",
+  },
+);
 
 network.configure({
   handlers: [
-    ...Object.values(localModules).flat(),
+    ...Object.values(overrideModules).flat(),
     ...Object.values(modules).flatMap((module) =>
       Object.values(module).flatMap((getHandlers) => getHandlers()),
     ),

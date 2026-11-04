@@ -18,7 +18,6 @@ app/                         # Application shell, providers, routing and global 
 │   └── mocks*.ts            # Development mock setup, local overrides and example
 ├── assets/                  # Shared assets imported by application code
 ├── constants/               # Shared theme tokens and application constants
-├── contexts/                # Optional cross-feature contexts and their providers
 ├── lib/                     # Optional cross-feature utilities/integrations; no feature logic or code with a more specific owner
 ├── ui/                      # Shared presentational UI; types/props in component files, no types/ directory
 ├── routes/                  # Pages composing feature components/hooks and generated APIs; no feature-level pages/
@@ -32,6 +31,8 @@ app/                         # Application shell, providers, routing and global 
         └── constants.ts     # Feature constants, when needed
 public/                      # Static assets
 ```
+
+Add feature-style folders at the shared level only when genuinely needed across features.
 
 ## API generation and mocks
 

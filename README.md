@@ -30,6 +30,12 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 | `OPENAPI_URL`      | Backend OpenAPI URL for `api:sync`                         | Yes, for `api:sync` | None     |
 | `VITE_API_MOCKING` | Enable development request interception; set by `dev:mock` | No                  | Disabled |
 
+## CI/CD
+
+| Setting       | Location                    | Purpose                                                                           |
+| ------------- | --------------------------- | --------------------------------------------------------------------------------- |
+| `OPENAPI_URL` | Repository Actions variable | OpenAPI URL for read-only `bun run api:sync --outdated`; check skipped when unset |
+
 ## Setup for an existing project
 
 Ask your agent:

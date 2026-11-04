@@ -19,7 +19,7 @@ app/                                  # Shell, providers, routing and global sty
 │   ├── http.ts                       # Optional shared transport beyond generated behavior
 │   ├── openapi.override.json         # Optional versioned full contract; before OPENAPI_URL
 │   ├── mocks.ts                      # Development-only MSW setup
-│   └── mocks.local/                  # Targeted local MSW handlers; Git-ignored
+│   └── mocks.local/                  # All mock handlers/data must live here; Git-ignored
 ├── assets/                           # Shared imported assets
 ├── constants/                        # Shared theme and app constants
 ├── lib/                              # Cross-feature utilities; no more specific owner

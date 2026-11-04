@@ -1,26 +1,19 @@
 import type { HttpHandler } from "msw";
 import { network } from "virtual:msw";
 
-const modules = import.meta.glob<Record<string, () => HttpHandler[]>>(
-  "./generated/index.msw.ts",
-  { eager: true },
-);
+const localModules = import.meta.glob<HttpHandler[]>("./mocks.local/index.ts", {
+  eager: true,
+  import: "default",
+});
 
-const overrideModules = import.meta.glob<HttpHandler[]>(
-  "./handlers.override.ts",
-  {
-    eager: true,
-    import: "default",
-  },
-);
+const handlers = Object.values(localModules).flat();
+
+if (handlers.length === 0) {
+  throw new Error("Local MSW mocks are missing or empty.");
+}
 
 network.configure({
-  handlers: [
-    ...Object.values(overrideModules).flat(),
-    ...Object.values(modules).flatMap((module) =>
-      Object.values(module).flatMap((getHandlers) => getHandlers()),
-    ),
-  ],
+  handlers,
   onUnhandledFrame: "warn",
 });
 

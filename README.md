@@ -9,19 +9,19 @@ See [AGENTS.md](./AGENTS.md) for coding guidelines.
 
 ## Commands
 
-| Command                | Purpose                                       |
-| ---------------------- | --------------------------------------------- |
-| `bun install`          | Install dependencies                          |
-| `bun run api:sync`     | Regenerate the API client and MSW mocks       |
-| `bun run dev`          | Start the development server                  |
-| `bun run dev:mock`     | Start development with MSW, without a backend |
-| `bun run start`        | Serve the production build                    |
-| `bun run lint`         | Check lint rules; warnings fail               |
-| `bun run lint:fix`     | Apply automatic lint fixes                    |
-| `bun run typecheck`    | Check TypeScript types                        |
-| `bun run knip`         | Find unused code and dependencies             |
-| `bun run staticchecks` | Run lint, typecheck and Knip                  |
-| `bun run build`        | Build for production                          |
+| Command                | Purpose                                          |
+| ---------------------- | ------------------------------------------------ |
+| `bun install`          | Install dependencies                             |
+| `bun run api:sync`     | Regenerate API clients, hooks, types and schemas |
+| `bun run dev`          | Start the development server                     |
+| `bun run dev:mock`     | Start development with MSW, without a backend    |
+| `bun run start`        | Serve the production build                       |
+| `bun run lint`         | Check lint rules; warnings fail                  |
+| `bun run lint:fix`     | Apply automatic lint fixes                       |
+| `bun run typecheck`    | Check TypeScript types                           |
+| `bun run knip`         | Find unused code and dependencies                |
+| `bun run staticchecks` | Run lint, typecheck and Knip                     |
+| `bun run build`        | Build for production                             |
 
 ## Env variables
 
@@ -46,12 +46,12 @@ Agent instructions:
 3. Implement only the approved selection, adapting to the target project without duplicates. Use its package manager, update its lockfile, and never downgrade dependencies.
 4. Run the affected checks and builds. Report the changes, results and source SHA.
 
-| Category                 | Features                                                            |
-| ------------------------ | ------------------------------------------------------------------- |
-| Architecture             | Project structure and coding guidelines                             |
-| Dependencies & stack     | React, React Router, TypeScript, Vite, Tailwind CSS, TanStack Query |
-| CI/CD                    | GitHub Actions workflows                                            |
-| Code quality             | ESLint, Prettier, Knip, quality scripts                             |
-| `git` hooks              | Pre-commit formatting                                               |
-| API generation & mocking | Orval client, hooks, types, Zod schemas and MSW mocks               |
-| Docker                   | Production image and build context                                  |
+| Category                 | Features                                                                 |
+| ------------------------ | ------------------------------------------------------------------------ |
+| Architecture             | Project structure and coding guidelines                                  |
+| Dependencies & stack     | React, React Router, TypeScript, Vite, Tailwind CSS, TanStack Query      |
+| CI/CD                    | GitHub Actions workflows                                                 |
+| Code quality             | ESLint, Prettier, Knip, quality scripts                                  |
+| `git` hooks              | Pre-commit formatting                                                    |
+| API generation & mocking | Orval clients, hooks, types and Zod schemas; AI-authored local MSW mocks |
+| Docker                   | Production image and build context                                       |

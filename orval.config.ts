@@ -26,7 +26,7 @@ export default {
           forceSuccessResponse: true,
         },
       },
-      mock: { indexMockFiles: true, generators: [{ type: "msw" }] },
+      mock: false,
       formatter: "prettier",
     },
   },

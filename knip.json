@@ -1,9 +1,8 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "tags": ["-lintignore"],
-  "entry": ["app/api/handlers.override.example.ts"],
   "ignoreIssues": {
     "app/api/generated/**": ["files", "exports", "types"]
   },
-  "ignoreDependencies": ["@faker-js/faker", "ajv", "zod"]
+  "ignoreDependencies": ["ajv", "zod"]
 }

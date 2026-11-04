@@ -40,6 +40,8 @@ Install the [frontend-mocks skill](https://github.com/mvagnon/skills/tree/main/f
 bunx skills add mvagnon/skills --skill frontend-mocks
 ```
 
+Use the skill to generate mocks in `src/api/mocks.local/`, then run `bun run dev:mock`.
+
 ### Setup for an existing project
 
 Ask your agent:

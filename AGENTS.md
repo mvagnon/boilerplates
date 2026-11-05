@@ -58,5 +58,7 @@ app/api/mocks.local/
 
 When frontend work requires API contract changes before they can be implemented in the backend:
 
-1. Version a complete backend OpenAPI copy as `app/api/openapi.override.json`, adapt the contract, then run `api:sync`.
+1. Version a complete backend OpenAPI copy as `app/api/openapi.override.json`.
+   - Apply only the **minimum viable** contract changes required by the current frontend work.
+   - Preserve all unrelated definitions, then run `api:sync`.
 2. Add only the missing API behavior or specific scenarios needed for testing in `app/api/mocks.local/`.

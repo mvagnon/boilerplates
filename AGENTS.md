@@ -45,9 +45,7 @@ app/
 ├── api/
 │   ├── generated/                    # Orval clients, hooks, types and schemas; reuse directly
 │   ├── http.ts                       # Optional shared transport beyond generated behavior
-│   ├── openapi.override.json         # Optional versioned full contract; before OPENAPI_URL
-│   ├── mocks.ts                      # Development-only MSW setup
-│   └── mocks.local/                  # All mock handlers/data must live here; Git-ignored
+│   └── openapi.override.json         # Optional versioned full contract; before OPENAPI_URL
 ├── assets/                           # Shared imported assets
 ├── lib/                              # Cross-feature utilities; no more specific owner
 ├── ui/                               # Shared presentational UI; colocated props/types, no types/
@@ -70,24 +68,8 @@ Import and use Orval-generated functions, hooks, types and schemas directly from
 Do not add pass-through wrappers, API facades or custom hooks that only forward generated behavior; introduce an abstraction only when it adds concrete application behavior not already provided by Orval.
 Use generated query keys for cache invalidation and generated query options for prefetching instead of recreating them manually.
 
-## Mocking
-
-Use `MSW` to intercept HTTP requests without changing components or generated clients.
-Create mocks only on explicit request, when work requires a backend not cloned locally, or for frontend-first work; override selected real-backend requests to test edge scenarios or develop components, leaving other requests untouched.
-By default, generate highly varied mock data (text lengths, list sizes, optional fields, and edge values).
-Keep all mock handlers/data in Git-ignored `app/api/mocks.local/`, grouped by feature:
-
-```text
-app/api/mocks.local/
-├── index.ts                # Aggregates handlers; default-exported array satisfies HttpHandler[]
-└── <feature>/
-    ├── handlers.ts         # MSW handlers
-    └── data.ts             # Mock data
-```
-
 When frontend work requires API contract changes before they can be implemented in the backend:
 
-1. Version a complete backend OpenAPI copy as `app/api/openapi.override.json`.
-   - Apply only the **minimum viable** contract changes required by the current frontend work.
-   - Preserve all unrelated definitions, then run `api:sync`.
-2. Add only the missing API behavior or specific scenarios needed for testing in `app/api/mocks.local/`.
+- Version a complete backend OpenAPI copy as `app/api/openapi.override.json`.
+- Apply only the **minimum viable** contract changes required by the current frontend work.
+- Preserve all unrelated definitions, then run `api:sync`.

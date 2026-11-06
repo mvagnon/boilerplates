@@ -45,12 +45,12 @@ Agent instructions:
 3. Implement only the approved selection, adapting to the target project without duplicates. Use its package manager, update its lockfile, and never downgrade dependencies.
 4. Run the affected checks and builds. Report the changes, results and source SHA.
 
-| Category                 | Features                                                            |
-| ------------------------ | ------------------------------------------------------------------- |
-| Architecture             | Project structure and coding guidelines                             |
-| Dependencies & stack     | React, React Router, TypeScript, Vite, Tailwind CSS, TanStack Query |
-| CI/CD                    | GitHub Actions workflows                                            |
-| Code quality             | ESLint, Prettier, Knip, quality scripts                             |
-| `git` hooks              | Pre-commit formatting                                               |
-| API generation & mocking | Orval clients, hooks, types, Zod schemas and Git-ignored MSW mocks  |
-| Docker                   | Production image and build context                                  |
+| Category             | Features                                                            |
+| -------------------- | ------------------------------------------------------------------- |
+| Architecture         | Project structure and coding guidelines                             |
+| Dependencies & stack | React, React Router, TypeScript, Vite, Tailwind CSS, TanStack Query |
+| CI/CD                | GitHub Actions workflows                                            |
+| Code quality         | ESLint, Prettier, Knip, quality scripts                             |
+| `git` hooks          | Pre-commit formatting                                               |
+| API generation       | Orval clients, hooks, types and Zod schemas                         |
+| Docker               | Production image and build context                                  |

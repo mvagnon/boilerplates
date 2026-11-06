@@ -1,15 +1,9 @@
-import { existsSync } from "node:fs";
 import type { ConfigExternal } from "orval";
 
-const overridePath = "./app/api/openapi.override.json";
-const inputTarget = existsSync(overridePath)
-  ? overridePath
-  : process.env.OPENAPI_URL;
+const inputTarget = process.env.OPENAPI_URL;
 
 if (!inputTarget) {
-  throw new Error(
-    `Set OPENAPI_URL or provide ${overridePath} to generate the API.`,
-  );
+  throw new Error("Set OPENAPI_URL to generate the API.");
 }
 
 export default {

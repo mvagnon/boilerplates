@@ -5,6 +5,14 @@
 This project is a React application boilerplate.
 Give as much information about the project in about ~3-6 lines.
 
+## Project Initialization
+
+After a fresh clone, run from the project root:
+
+```bash
+bun install --frozen-lockfile
+```
+
 ## Architecture
 
 Use a simple, feature-oriented architecture.

@@ -74,6 +74,7 @@ Use generated query keys for cache invalidation and generated query options for 
 
 Use `MSW` to intercept HTTP requests without changing components or generated clients.
 Create mocks only on explicit request, when work requires a backend not cloned locally, or for frontend-first work; override selected real-backend requests to test edge scenarios or develop components, leaving other requests untouched.
+By default, generate highly varied mock data (text lengths, list sizes, optional fields, and edge values).
 Keep all mock handlers/data in Git-ignored `app/api/mocks.local/`, grouped by feature:
 
 ```text

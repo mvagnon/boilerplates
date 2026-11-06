@@ -7,11 +7,31 @@ Give as much information about the project in about ~3-6 lines.
 
 ## Project Initialization
 
+### Post Clone Tasks
+
 After a fresh clone, run from the project root:
 
 ```bash
 bun install --frozen-lockfile
 ```
+
+### Run Dev Server
+
+Run from the project root:
+
+```bash
+bun run dev
+```
+
+Optionally override the port (replace `3001` with the desired port):
+
+```bash
+bun run dev --port 3001
+```
+
+### Cleanup Dev Server
+
+Stop the dev server you started when it is no longer needed.
 
 ## Architecture
 

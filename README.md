@@ -24,9 +24,10 @@ See [AGENTS.md](./AGENTS.md) for technical guidelines.
 
 ## Env variables
 
-| Variable      | Purpose                                 | Required                                      | Default |
-| ------------- | --------------------------------------- | --------------------------------------------- | ------- |
-| `OPENAPI_URL` | OpenAPI URL or file path for `api:sync` | Unless `app/api/openapi.override.json` exists | None    |
+| Variable       | Purpose                                                    | Required                                      | Default             |
+| -------------- | ---------------------------------------------------------- | --------------------------------------------- | ------------------- |
+| `OPENAPI_URL`  | OpenAPI URL or file path for `api:sync`                    | Unless `app/api/openapi.override.json` exists | None                |
+| `VITE_API_URL` | API base URL; set in `.env.local` or the build environment | No                                            | Empty (same origin) |
 
 ## Setup for an existing project
 

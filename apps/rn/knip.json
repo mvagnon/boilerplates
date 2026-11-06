@@ -1,0 +1,8 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": ["plugins/*.js"],
+  "ignoreIssues": {
+    "src/api/generated/**": ["files", "exports", "types"]
+  },
+  "ignoreDependencies": ["expo-mcp", "ajv", "zod"]
+}

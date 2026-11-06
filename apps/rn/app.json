@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "rn-boilerplate",
+    "slug": "rn-boilerplate",
+    "platforms": ["android", "ios", "web"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "rnboilerplate",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "./plugins/with-native-bootsplash",
+        {
+          "logo": "./assets/images/splash-icon.png",
+          "logoWidth": 134
+        }
+      ],
+      "./plugins/with-android-r8"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

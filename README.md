@@ -1,7 +1,12 @@
 [![portfolio](https://img.shields.io/website?url=https%3A%2F%2Fmvagnon.dev&up_message=Visit&label=Portfolio&color=%23007fff)](https://mvagnon.dev)
 [![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-Support-yellow?logo=buymeacoffee)](https://buymeacoffee.com/mvagnon)
 
-# React Boilerplate
+# Boilerplates
+
+| Application  | Stack                                            | Documentation                              |
+| ------------ | ------------------------------------------------ | ------------------------------------------ |
+| React        | React Router, Vite, Tailwind CSS, TanStack Query | [React README](./apps/react/README.md)     |
+| React Native | Expo, React Native, Expo Router, EAS             | [React Native README](./apps/rn/README.md) |
 
 ## Reference
 
@@ -9,48 +14,52 @@ See [AGENTS.md](./AGENTS.md) for technical guidelines.
 
 ## Commands
 
-| Command                | Purpose                                          |
-| ---------------------- | ------------------------------------------------ |
-| `bun install`          | Install dependencies                             |
-| `bun run api:sync`     | Regenerate API clients, hooks, types and schemas |
-| `bun run dev`          | Start the development server                     |
-| `bun run start`        | Serve the production build                       |
-| `bun run lint`         | Check lint rules; warnings fail                  |
-| `bun run lint:fix`     | Apply automatic lint fixes                       |
-| `bun run typecheck`    | Check TypeScript types                           |
-| `bun run knip`         | Find unused code and dependencies                |
-| `bun run staticchecks` | Run lint, typecheck and Knip                     |
-| `bun run build`        | Build for production                             |
+| Command                                          | Purpose                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------ |
+| `bun install --frozen-lockfile`                  | Install root and application dependencies from the shared lockfile |
+| `bun run dev`                                    | Start both development servers                                     |
+| `bun run dev:react`                              | Start only the React web app                                       |
+| `bun run dev:rn`                                 | Start only the Expo development server                             |
+| `bun run staticchecks`                           | Run lint, TypeScript and Knip checks for both apps                 |
+| `bun run staticchecks --filter=@boilerplates/rn` | Check only the mobile app                                          |
+| `bun run build`                                  | Build the React web app for production                             |
 
-## Env variables
+## CI/CD
 
-| Variable       | Purpose                                                    | Required            | Default             |
-| -------------- | ---------------------------------------------------------- | ------------------- | ------------------- |
-| `OPENAPI_URL`  | OpenAPI URL or file path for `api:sync`                    | Yes, for `api:sync` | None                |
-| `VITE_API_URL` | API base URL; set in `.env.local` or the build environment | No                  | Empty (same origin) |
+### GitHub secrets
+
+| Setting            | Type            | Location                                                                             | Purpose                                                                                                             |
+| ------------------ | --------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `EXPO_TOKEN`       | Secret          | Repository Actions secret, or environment secrets in both `preview` and `production` | Required for EAS builds and submissions when releases are enabled                                                   |
+| `RELEASE_ENABLED`  | Variable        | Repository Actions variable                                                          | Set to `true` after EAS/store setup to enable mobile release PRs, preview and production builds; disabled otherwise |
+| `RELEASE_REVIEWER` | Variable        | Repository Actions variable                                                          | Optional GitHub login to request reviews on release PRs                                                             |
+| `GITHUB_TOKEN`     | Automatic token | Provided by GitHub Actions; do not create manually                                   | Authenticate release management                                                                                     |
 
 ## Setup for an existing project
 
 Ask your agent:
 
 ```text
-Use `mvagnon/react-boilerplate` as a reference to adopt boilerplate's conventions, structure, stack, CI/CD, quality scripts, `git` hooks, etc.
-Follow its README's "Agent instructions" using `gh` CLI or GitHub MCP.
+Use this repository as a reference for Bun workspaces, Turborepo, shared tooling and CI/CD.
+Select React, React Native, or both boilerplates; default to both when no selection is specified.
+Integrate the selected applications into a single monorepo.
+Follow this README's "Agent instructions" and the READMEs of the selected applications.
 ```
 
 Agent instructions:
 
-1. Read the boilerplate at the requested ref (default: default branch) using `gh` or GitHub MCP; record its commit SHA. Read the target project too; its `AGENTS.md` and conventions take precedence.
-2. Present the available features grouped by the categories below. Explicitly ask what to apply and what to exclude in each category. Wait for the user's answer before making changes.
-3. Implement only the approved selection, adapting to the target project without duplicates. Use its package manager, update its lockfile, and never downgrade dependencies.
-4. Run the affected checks and builds. Report the changes, results and source SHA.
+1. Use the requested boilerplates: React (`apps/react`), React Native (`apps/rn`), or all; default to all when none are specified.
+2. Read this repository at the requested ref and record its commit SHA, including the root configuration and selected application READMEs.
+3. Read the target project; its `AGENTS.md` and conventions take precedence.
+4. Present the categories below for the selected applications and explicitly ask what to apply or exclude; wait for approval before making changes.
+5. Integrate only the approved selection into one monorepo without duplicate tooling or dependency downgrades; preserve independent application configurations and releases.
+6. For React Native, preserve the Expo SDK, app identity, signing and runtime policy; keep API URLs device-reachable.
+7. Run the affected checks and builds, then report the changes, results and source SHA.
 
-| Category             | Features                                                            |
-| -------------------- | ------------------------------------------------------------------- |
-| Architecture         | Project structure and coding guidelines                             |
-| Dependencies & stack | React, React Router, TypeScript, Vite, Tailwind CSS, TanStack Query |
-| CI/CD                | GitHub Actions workflows                                            |
-| Code quality         | ESLint, Prettier, Knip, quality scripts                             |
-| `git` hooks          | Pre-commit formatting                                               |
-| API generation       | Orval clients, hooks, types and Zod schemas                         |
-| Docker               | Production image and build context                                  |
+| Category             | Features                                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------- |
+| Architecture         | Independent applications in `apps/*`, app-specific guidelines and a single lockfile               |
+| Dependencies & stack | Bun workspaces and Turborepo                                                                      |
+| Code quality         | Prettier and application-level ESLint, TypeScript and Knip checks                                 |
+| Git hooks            | Staged-file formatting with pretty-quick                                                          |
+| CI/CD                | Shared GitHub Actions quality checks, web build, Trivy scan and optional mobile release workflows |

@@ -1,15 +1,21 @@
-# Project Instructions
+# Project Technical Instructions
 
-## Introduction
+## Applications
 
-This project is a React application boilerplate.
-Give as much information about the project in about ~3-6 lines.
+Before changing an application, read its instructions:
+
+| Application  | Instructions                      |
+| ------------ | --------------------------------- |
+| React        | [AGENTS.md](apps/react/AGENTS.md) |
+| React Native | [AGENTS.md](apps/rn/AGENTS.md)    |
+
+App-specific commands run from the corresponding app directory, except dependency installation always runs from the repository root.
 
 ## Project Initialization
 
 ### Post Clone Tasks
 
-After a fresh clone, run from the project root:
+After a fresh clone, install all workspace dependencies from the repository root:
 
 ```bash
 bun install --frozen-lockfile
@@ -17,45 +23,12 @@ bun install --frozen-lockfile
 
 ### Run Dev Server
 
-Run from the project root:
+Run from the repository root to start both the React and Expo development servers:
 
 ```bash
 bun run dev
 ```
 
-Optionally override the port (replace `3001` with the desired port):
-
-```bash
-bun run dev --port 3001
-```
-
 ### Cleanup Dev Server
 
-Stop the dev server you started when it is no longer needed.
-
-## Architecture
-
-Use a simple, feature-oriented architecture.
-This layout describes responsibilities, not a file inventory.
-
-Add feature-style folders at the shared level only when genuinely needed across features.
-
-```text
-app/
-├── api/
-│   ├── generated/                    # Orval clients, hooks, types and schemas; reuse directly
-│   └── http.ts                       # Optional shared transport beyond generated behavior
-├── assets/                           # Shared imported assets
-├── lib/                              # Cross-feature utilities; no more specific owner
-├── ui/                               # Shared presentational UI; colocated props/types, no types/
-├── routes/                           # Pages composing features/APIs; no feature pages/
-└── features/
-    └── <feature>/
-        ├── components/               # Feature UI; colocated props/types, no types/
-        ├── contexts/                 # Feature contexts/providers
-        ├── hooks/                    # Non-API feature state and behavior
-        ├── schemas/                  # UI/form validation and inferred types; not API contracts
-        ├── utils/                    # Pure feature calculations/transforms
-        └── constants/                # Feature constants
-public/                               # Static assets
-```
+Stop the development servers you started when they are no longer needed.

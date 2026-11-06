@@ -1,48 +1,21 @@
 {
-  "name": "react-boilerplate",
+  "name": "boilerplates",
   "private": true,
-  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "api:sync": "orval",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix --max-warnings 0",
-    "typecheck": "react-router typegen && tsc",
-    "knip": "knip",
-    "staticchecks": "bun run lint && bun run typecheck && bun run knip",
-    "build": "react-router build"
-  },
-  "dependencies": {
-    "@react-router/node": "^8.4.0",
-    "@react-router/serve": "^8.4.0",
-    "@tanstack/react-query": "^5.104.0",
-    "isbot": "^5.1.36",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router": "^8.4.0",
-    "zod": "^4.6.7"
+    "dev": "turbo run dev",
+    "dev:react": "turbo run dev --filter=@boilerplates/react",
+    "dev:rn": "turbo run dev --filter=@boilerplates/rn",
+    "staticchecks": "turbo run lint typecheck knip",
+    "build": "turbo run build"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.0",
-    "@eslint/json": "^2.1.0",
-    "@react-router/dev": "^8.4.0",
-    "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^26.6.3",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "ajv": "^8.20.0",
-    "eslint": "^9.39.0",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^17.12.0",
-    "knip": "^6.38.0",
-    "orval": "^8.46.0",
     "prettier": "3.9.9",
     "pretty-quick": "^4.2.2",
     "simple-git-hooks": "^2.14.0",
-    "tailwindcss": "^4.2.2",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.70.1",
-    "vite": "^8.3.5"
+    "turbo": "^2.11.10"
   }
 }

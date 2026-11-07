@@ -5,7 +5,7 @@
 This project is an Expo/React Native application boilerplate.
 Give as much information about the project in about ~3-6 lines.
 
-## Project Initialization
+## Project Initialization and Quality Checks
 
 ### Post Clone Tasks
 
@@ -27,6 +27,14 @@ bun run web
 ### Cleanup Dev Server
 
 Stop the dev server you started when it is no longer needed.
+
+### Quality Checks
+
+Run static checks from the application directory:
+
+```bash
+bun run staticchecks
+```
 
 ## Architecture
 

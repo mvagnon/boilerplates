@@ -11,7 +11,7 @@ Before changing an application, read its instructions:
 
 App-specific commands run from the corresponding app directory, except dependency installation always runs from the repository root.
 
-## Project Initialization
+## Project Initialization and Quality Checks
 
 ### Post Clone Tasks
 
@@ -32,3 +32,11 @@ bun run dev
 ### Cleanup Dev Server
 
 Stop the development servers you started when they are no longer needed.
+
+### Quality Checks
+
+Run static checks from the repository root:
+
+```bash
+bun run staticchecks
+```

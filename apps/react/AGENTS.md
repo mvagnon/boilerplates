@@ -37,9 +37,9 @@ bun run staticchecks
 
 ## Architecture
 
-Use a simple, feature-oriented architecture.
+Use a simple, feature-oriented architecture centered around Orval generations.
+Do not use wrappers and abstractions around Orval generations.
 This layout describes responsibilities, not a file inventory.
-
 Add feature-style folders at the shared level only when genuinely needed across features.
 
 ```text

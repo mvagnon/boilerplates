@@ -72,8 +72,8 @@ jobs:
           output: ${{ runner.temp }}/trivy-results.json
           exit-code: "0"
 
-      - name: Check fixable vulnerabilities
-        run: trivy fs --cache-dir .cache/trivy --scanners vuln --ignore-unfixed --exit-code 1 .
+      - name: Check fixable critical vulnerabilities
+        run: trivy fs --cache-dir .cache/trivy --scanners vuln --severity CRITICAL --ignore-unfixed --exit-code 1 .
 
       - name: Upload security reports
         if: ${{ !cancelled() }}

@@ -15,6 +15,7 @@ export default {
       target: "./src/api/generated/client.ts",
       schemas: { path: "./src/api/generated/models", type: "zod" },
       mode: "tags-split",
+      formatter: "prettier",
       client: "react-query",
       httpClient: "fetch",
       urlEncodeParameters: true,

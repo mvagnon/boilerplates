@@ -49,6 +49,8 @@ src/
 ├── api/
 │   ├── generated/                    # Orval clients, hooks, types and schemas; reuse directly
 │   └── http.ts                       # Optional shared transport beyond generated behavior
+├── contexts/                         # Shared contexts/providers across features
+├── hooks/                            # Shared non-API state and behavior across features
 ├── lib/                              # Cross-feature utilities; no more specific owner
 ├── ui/                               # Shared presentational UI; colocated props/types, no types/
 └── features/

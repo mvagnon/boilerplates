@@ -11,31 +11,31 @@ Before changing an application, read its instructions:
 
 App-specific commands run from the corresponding app directory, except dependency installation always runs from the repository root.
 
-## Project Initialization and Quality Checks
+## Informational
 
-### Post Clone Tasks
+### Post Clone
 
-After a fresh clone, install all workspace dependencies from the repository root:
+Repository root:
 
 ```bash
 bun install --frozen-lockfile
 ```
 
-### Run Dev Server
+### Dev Server
 
-Run from the repository root to start both the React and Expo development servers:
+React and Expo Web; repository root:
 
 ```bash
 bun run dev
 ```
 
-### Cleanup Dev Server
+### Cleanup
 
-Stop the development servers you started when they are no longer needed.
+Task-owned development servers only; shared instances remain untouched.
 
 ### Quality Checks
 
-Run static checks from the repository root:
+Repository root:
 
 ```bash
 bun run staticchecks

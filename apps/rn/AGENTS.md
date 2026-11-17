@@ -5,32 +5,38 @@
 This project is an Expo/React Native application boilerplate.
 Give as much information about the project in about ~3-6 lines.
 
-## Project Initialization and Quality Checks
+## Informational
 
-### Post Clone Tasks
+### Post Clone
 
-After a fresh clone, run from the project root with EAS authentication configured:
+Repository root:
 
 ```bash
 bun install --frozen-lockfile
+```
+
+Application directory; EAS authentication and project access required.
+The pull may update `.env.local` or prompt for EAS project setup.
+
+```bash
 bun run pull
 ```
 
-### Run Dev Server
+### Dev Server
 
-Run the web dev server from the project root:
+Expo Web; application directory:
 
 ```bash
 bun run web
 ```
 
-### Cleanup Dev Server
+### Cleanup
 
-Stop the dev server you started when it is no longer needed.
+Task-owned development servers only; shared instances remain untouched.
 
 ### Quality Checks
 
-Run static checks from the application directory:
+Application directory:
 
 ```bash
 bun run staticchecks

@@ -5,31 +5,31 @@
 This project is a React application boilerplate.
 Give as much information about the project in about ~3-6 lines.
 
-## Project Initialization and Quality Checks
+## Informational
 
-### Post Clone Tasks
+### Post Clone
 
-After a fresh clone, run from the project root:
+Repository root:
 
 ```bash
 bun install --frozen-lockfile
 ```
 
-### Run Dev Server
+### Dev Server
 
-Run from the project root:
+Application directory:
 
 ```bash
 bun run dev
 ```
 
-### Cleanup Dev Server
+### Cleanup
 
-Stop the dev server you started when it is no longer needed.
+Task-owned development servers only; shared instances remain untouched.
 
 ### Quality Checks
 
-Run static checks from the application directory:
+Application directory:
 
 ```bash
 bun run staticchecks
